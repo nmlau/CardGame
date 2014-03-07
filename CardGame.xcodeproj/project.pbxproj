@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BAD8201A18C9C70700A988E3 /* CardGame.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BAD8201918C9C70700A988E3 /* CardGame.1 */; };
-		BAD8202518C9C72300A988E3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8202118C9C72300A988E3 /* main.cpp */; };
-		BAD8202618C9C72300A988E3 /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8202218C9C72300A988E3 /* LinkedList.cpp */; };
-		BAD8202718C9C72300A988E3 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8202318C9C72300A988E3 /* Node.cpp */; };
+		BAD8203D18CA869000A988E3 /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8203818CA869000A988E3 /* LinkedList.cpp */; };
+		BAD8203E18CA869000A988E3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8203918CA869000A988E3 /* main.cpp */; };
+		BAD8203F18CA869000A988E3 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8203B18CA869000A988E3 /* Node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,11 +29,11 @@
 /* Begin PBXFileReference section */
 		BAD8201418C9C70700A988E3 /* CardGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD8201918C9C70700A988E3 /* CardGame.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CardGame.1; sourceTree = "<group>"; };
-		BAD8202018C9C72300A988E3 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedList.h; path = ../../../../Desktop/LinkedList/LinkedList/LinkedList.h; sourceTree = "<group>"; };
-		BAD8202118C9C72300A988E3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../../Desktop/LinkedList/LinkedList/main.cpp; sourceTree = "<group>"; };
-		BAD8202218C9C72300A988E3 /* LinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LinkedList.cpp; path = ../../../../Desktop/LinkedList/LinkedList/LinkedList.cpp; sourceTree = "<group>"; };
-		BAD8202318C9C72300A988E3 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = ../../../../Desktop/LinkedList/LinkedList/Node.cpp; sourceTree = "<group>"; };
-		BAD8202418C9C72300A988E3 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = ../../../../Desktop/LinkedList/LinkedList/Node.h; sourceTree = "<group>"; };
+		BAD8203818CA869000A988E3 /* LinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LinkedList.cpp; path = CardGame/LinkedList.cpp; sourceTree = "<group>"; };
+		BAD8203918CA869000A988E3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = CardGame/main.cpp; sourceTree = "<group>"; };
+		BAD8203A18CA869000A988E3 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedList.h; path = CardGame/LinkedList.h; sourceTree = "<group>"; };
+		BAD8203B18CA869000A988E3 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = CardGame/Node.cpp; sourceTree = "<group>"; };
+		BAD8203C18CA869000A988E3 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = CardGame/Node.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +50,11 @@
 		BAD8200B18C9C70700A988E3 = {
 			isa = PBXGroup;
 			children = (
+				BAD8203818CA869000A988E3 /* LinkedList.cpp */,
+				BAD8203918CA869000A988E3 /* main.cpp */,
+				BAD8203A18CA869000A988E3 /* LinkedList.h */,
+				BAD8203B18CA869000A988E3 /* Node.cpp */,
+				BAD8203C18CA869000A988E3 /* Node.h */,
 				BAD8201618C9C70700A988E3 /* CardGame */,
 				BAD8201518C9C70700A988E3 /* Products */,
 			);
@@ -66,11 +71,6 @@
 		BAD8201618C9C70700A988E3 /* CardGame */ = {
 			isa = PBXGroup;
 			children = (
-				BAD8202018C9C72300A988E3 /* LinkedList.h */,
-				BAD8202118C9C72300A988E3 /* main.cpp */,
-				BAD8202218C9C72300A988E3 /* LinkedList.cpp */,
-				BAD8202318C9C72300A988E3 /* Node.cpp */,
-				BAD8202418C9C72300A988E3 /* Node.h */,
 				BAD8201918C9C70700A988E3 /* CardGame.1 */,
 			);
 			path = CardGame;
@@ -127,9 +127,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAD8202518C9C72300A988E3 /* main.cpp in Sources */,
-				BAD8202618C9C72300A988E3 /* LinkedList.cpp in Sources */,
-				BAD8202718C9C72300A988E3 /* Node.cpp in Sources */,
+				BAD8203F18CA869000A988E3 /* Node.cpp in Sources */,
+				BAD8203E18CA869000A988E3 /* main.cpp in Sources */,
+				BAD8203D18CA869000A988E3 /* LinkedList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +237,7 @@
 				BAD8201F18C9C70700A988E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
