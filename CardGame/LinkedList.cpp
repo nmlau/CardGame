@@ -13,7 +13,7 @@ int LinkedList::s_count = 0;
 void LinkedList::addNode(DATA d) {
     //add a null data check
     Node * newTail = new Node(d);
-    Node::join(this->tail, newTail);
+    newTail->join(this->tail, newTail);
     this->tail = newTail;
     size++;
 }
@@ -66,7 +66,7 @@ LinkedList * LinkedList::join(LinkedList * a, LinkedList * b) {
  */
 
 void LinkedList::concatenate(LinkedList * a) {
-    Node::join(this->tail,a->head);
+    (this->tail)->join(this->tail,a->head);
     this->tail = a->tail;
 }
 
@@ -78,7 +78,7 @@ void LinkedList::removeDuplicates() {
         while (index->getNextNode() != NULL) {
             index = index->getNextNode();
             if(current->getValue() == index->getValue()) {
-                Node::join(index->getPrevNode(), index->getNextNode());
+                index->join(index->getPrevNode(), index->getNextNode());
                 delete(index);
             }
         }
@@ -98,7 +98,7 @@ LinkedList * LinkedList::subtract(LinkedList * a) {
         do {
             Node * temp = index->getNextNode();
             if(current->getValue() == index->getValue()) {
-                Node::join(current->getPrevNode(), current->getNextNode());
+                current->join(current->getPrevNode(), current->getNextNode());
                 delete(index);
             }
             if (temp != NULL) {

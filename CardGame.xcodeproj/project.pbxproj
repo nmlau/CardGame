@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAC6CD9D18CAAC7000F2CF5F /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */; };
 		BAD8201A18C9C70700A988E3 /* CardGame.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BAD8201918C9C70700A988E3 /* CardGame.1 */; };
 		BAD8203D18CA869000A988E3 /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8203818CA869000A988E3 /* LinkedList.cpp */; };
 		BAD8203E18CA869000A988E3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8203918CA869000A988E3 /* main.cpp */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BAC6CD9B18CAAC7000F2CF5F /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = CardGame/Card.h; sourceTree = "<group>"; };
+		BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Card.cpp; path = CardGame/Card.cpp; sourceTree = "<group>"; };
 		BAD8201418C9C70700A988E3 /* CardGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD8201918C9C70700A988E3 /* CardGame.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CardGame.1; sourceTree = "<group>"; };
 		BAD8203818CA869000A988E3 /* LinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LinkedList.cpp; path = CardGame/LinkedList.cpp; sourceTree = "<group>"; };
@@ -50,8 +53,10 @@
 		BAD8200B18C9C70700A988E3 = {
 			isa = PBXGroup;
 			children = (
-				BAD8203818CA869000A988E3 /* LinkedList.cpp */,
 				BAD8203918CA869000A988E3 /* main.cpp */,
+				BAC6CD9B18CAAC7000F2CF5F /* Card.h */,
+				BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */,
+				BAD8203818CA869000A988E3 /* LinkedList.cpp */,
 				BAD8203A18CA869000A988E3 /* LinkedList.h */,
 				BAD8203B18CA869000A988E3 /* Node.cpp */,
 				BAD8203C18CA869000A988E3 /* Node.h */,
@@ -130,6 +135,7 @@
 				BAD8203F18CA869000A988E3 /* Node.cpp in Sources */,
 				BAD8203E18CA869000A988E3 /* main.cpp in Sources */,
 				BAD8203D18CA869000A988E3 /* LinkedList.cpp in Sources */,
+				BAC6CD9D18CAAC7000F2CF5F /* Card.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

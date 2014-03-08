@@ -8,10 +8,18 @@
 
 #include <iostream>
 #include "LinkedList.h"
-
+#include "Card.h"
+using namespace std;
 
 int main(int argc, const char * argv[])
 {
+    Node * test = new Card(9);
+    Node * test1 = new Card(11);
+    test->join(test, test1);
+    cout << test->getValue() << endl;
+    cout << test1->getValue() << endl;
+    Node * test2 = new Card(test, test1, 10);
+    /* Basic Linked List using Nodes test
     LinkedList * test = new LinkedList(9);
     LinkedList * test2 = new LinkedList(11);
     test2->addNode(10);
@@ -22,4 +30,5 @@ int main(int argc, const char * argv[])
    // test2 = test2->subtract(test2, test);
     test2 = test2->subtract(test);
     test2->print();
+     */
 }

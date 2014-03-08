@@ -45,7 +45,7 @@ public:
         size = 1;
         while ((index->getNextNode()) != NULL) {
             index = index->getNextNode();
-            Node::join(tail,new Node(index->getValue()));
+            index->join(tail,new Node(index->getValue()));
             tail = tail->getNextNode();
             size++;
         }
