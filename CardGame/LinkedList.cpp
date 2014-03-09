@@ -46,13 +46,11 @@ void LinkedList::print() {
 }
 
 /* static */
-
 void LinkedList::countInstantiations() {
     cout << "There is/are " << s_count << " Linked List Instantiation(s)" << endl;
 }
 
 /* static */
-
 LinkedList * LinkedList::join(LinkedList * a, LinkedList * b) {
     LinkedList * deepCopyA = new LinkedList(a);
     LinkedList * deepCopyB = new LinkedList(b);
@@ -64,7 +62,6 @@ LinkedList * LinkedList::join(LinkedList * a, LinkedList * b) {
 /*
  Concatenates a deep copy of paramter 'a' onto calling object
  */
-
 void LinkedList::concatenate(LinkedList * a) {
     (this->tail)->join(this->tail,a->head);
     this->tail = a->tail;
