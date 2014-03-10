@@ -21,15 +21,15 @@ public:
     Node(Node * p, Node * n, DATA d);
     
     /* getters and setters */
-    virtual void setValue(DATA a);
-    virtual DATA getValue();
-    virtual void setPrevNode(Node * a);
-    virtual Node * getPrevNode();
-    virtual void setNextNode(Node * a);
-    virtual Node * getNextNode();
+    void setValue(DATA a);
+    DATA getValue();
+    void setPrevNode(Node * a);
+    Node * getPrevNode();
+    void setNextNode(Node * a);
+    Node * getNextNode();
     
     /* inserts node between nodes */
-    virtual void join(Node * a, Node * b);
+    static void join(Node * a, Node * b);
 
 private:
     Node * prev;

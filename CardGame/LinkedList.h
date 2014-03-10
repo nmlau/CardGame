@@ -10,8 +10,9 @@
 #define __LinkedList__LinkedList__
 
 #include <iostream>
-#include "Node.h"
+#include "Card.h"
 using namespace std;
+typedef Card * storage_t;
 
 class LinkedList {
 private:
@@ -19,41 +20,16 @@ private:
 
 public:
     
-    Node * head;
-    Node * tail;
+    storage_t head;
+    storage_t tail;
     int size;
+    
     /**** Constructors ******/
-    LinkedList() {
-        head = NULL;
-        tail = NULL;
-        size = 0;
-        s_count++;
-    }
-    LinkedList(DATA d) {
-        Node * n = new Node(d);
-        head = n;
-        tail = n;
-        size = 1;
-        s_count++;
-    }
-    LinkedList(LinkedList * a) {
-        Node * index = a->head;
-        //LinkedList newList = new LinkedList(index->data);
-        Node * n = new Node(index->getValue());
-        head = n;
-        tail = n;
-        size = 1;
-        while ((index->getNextNode()) != NULL) {
-            index = index->getNextNode();
-            index->join(tail,new Node(index->getValue()));
-            tail = tail->getNextNode();
-            size++;
-        }
-        s_count++;
-    }
-    ~LinkedList() {
-        s_count--;
-    }
+    LinkedList();
+    LinkedList(DATA d);
+    LinkedList(LinkedList * a);
+    ~LinkedList();
+    
     /***** Methods ******/
     void addNode(DATA d);
     void removeNode(DATA d);
