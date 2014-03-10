@@ -14,18 +14,14 @@
 typedef char* suit_t;
 typedef char* rank_t;
 
-class Card: public Node {
+class Card {
 public:
-    Card(): Node() {}
-    Card(DATA d): Node(d) {}
-    Card(Node * p, Node * n, DATA d): Node(p, n, d) {}
     
-protected:
+
+private:
     suit_t suit;
     rank_t rank;
     
-    
 };
-
 
 #endif /* defined(__CardGame__Card__) */

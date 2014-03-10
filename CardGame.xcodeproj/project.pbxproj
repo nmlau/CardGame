@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA9AB54018CD946000304ACF /* ICard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA9AB53F18CD946000304ACF /* ICard.cpp */; };
 		BAC6CD9D18CAAC7000F2CF5F /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */; };
 		BAD8201A18C9C70700A988E3 /* CardGame.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BAD8201918C9C70700A988E3 /* CardGame.1 */; };
 		BAD8203D18CA869000A988E3 /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAD8203818CA869000A988E3 /* LinkedList.cpp */; };
@@ -28,15 +29,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BAC6CD9B18CAAC7000F2CF5F /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = CardGame/Card.h; sourceTree = "<group>"; };
-		BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Card.cpp; path = CardGame/Card.cpp; sourceTree = "<group>"; };
+		BA9AB53E18CD946000304ACF /* ICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICard.h; sourceTree = "<group>"; };
+		BA9AB53F18CD946000304ACF /* ICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ICard.cpp; sourceTree = "<group>"; };
+		BAC6CD9B18CAAC7000F2CF5F /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
 		BAD8201418C9C70700A988E3 /* CardGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD8201918C9C70700A988E3 /* CardGame.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CardGame.1; sourceTree = "<group>"; };
-		BAD8203818CA869000A988E3 /* LinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LinkedList.cpp; path = CardGame/LinkedList.cpp; sourceTree = "<group>"; };
-		BAD8203918CA869000A988E3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = CardGame/main.cpp; sourceTree = "<group>"; };
-		BAD8203A18CA869000A988E3 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedList.h; path = CardGame/LinkedList.h; sourceTree = "<group>"; };
-		BAD8203B18CA869000A988E3 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = CardGame/Node.cpp; sourceTree = "<group>"; };
-		BAD8203C18CA869000A988E3 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Node.h; path = CardGame/Node.h; sourceTree = "<group>"; };
+		BAD8203818CA869000A988E3 /* LinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedList.cpp; sourceTree = "<group>"; };
+		BAD8203918CA869000A988E3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BAD8203A18CA869000A988E3 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
+		BAD8203B18CA869000A988E3 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		BAD8203C18CA869000A988E3 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,13 +56,6 @@
 		BAD8200B18C9C70700A988E3 = {
 			isa = PBXGroup;
 			children = (
-				BAD8203918CA869000A988E3 /* main.cpp */,
-				BAC6CD9B18CAAC7000F2CF5F /* Card.h */,
-				BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */,
-				BAD8203818CA869000A988E3 /* LinkedList.cpp */,
-				BAD8203A18CA869000A988E3 /* LinkedList.h */,
-				BAD8203B18CA869000A988E3 /* Node.cpp */,
-				BAD8203C18CA869000A988E3 /* Node.h */,
 				BAD8201618C9C70700A988E3 /* CardGame */,
 				BAD8201518C9C70700A988E3 /* Products */,
 			);
@@ -76,6 +72,15 @@
 		BAD8201618C9C70700A988E3 /* CardGame */ = {
 			isa = PBXGroup;
 			children = (
+				BA9AB53E18CD946000304ACF /* ICard.h */,
+				BA9AB53F18CD946000304ACF /* ICard.cpp */,
+				BAD8203918CA869000A988E3 /* main.cpp */,
+				BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */,
+				BAC6CD9B18CAAC7000F2CF5F /* Card.h */,
+				BAD8203818CA869000A988E3 /* LinkedList.cpp */,
+				BAD8203A18CA869000A988E3 /* LinkedList.h */,
+				BAD8203B18CA869000A988E3 /* Node.cpp */,
+				BAD8203C18CA869000A988E3 /* Node.h */,
 				BAD8201918C9C70700A988E3 /* CardGame.1 */,
 			);
 			path = CardGame;
@@ -132,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9AB54018CD946000304ACF /* ICard.cpp in Sources */,
 				BAD8203F18CA869000A988E3 /* Node.cpp in Sources */,
 				BAD8203E18CA869000A988E3 /* main.cpp in Sources */,
 				BAD8203D18CA869000A988E3 /* LinkedList.cpp in Sources */,

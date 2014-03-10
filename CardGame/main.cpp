@@ -8,17 +8,17 @@
 
 #include <iostream>
 #include "LinkedList.h"
-#include "Card.h"
+#include "ICard.h"
 using namespace std;
 
 int main(int argc, const char * argv[])
 {
-    Node * test = new Card(9);
-    Node * test1 = new Card(11);
+    Node * test = new ICard(9);
+    Node * test1 = new ICard(11);
     test->join(test, test1);
     cout << test->getValue() << endl;
     cout << test1->getValue() << endl;
-    Node * test2 = new Card(test, test1, 10);
+    Node * test2 = new ICard(test, test1, 10);
     /* Basic Linked List using Nodes test
     LinkedList * test = new LinkedList(9);
     LinkedList * test2 = new LinkedList(11);
