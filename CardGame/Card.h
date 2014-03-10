@@ -16,11 +16,18 @@ typedef char* rank_t;
 
 class Card {
 public:
+    Card() {};
+    Card(char* s, char* r);
     
+    void setSuit(suit_t a);
+    suit_t getSuit();
+    void setRank(rank_t a);
+    rank_t getRank();
 
 private:
     suit_t suit;
     rank_t rank;
+    Node * node;
     
 };
 
