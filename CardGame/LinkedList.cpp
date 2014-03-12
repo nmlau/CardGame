@@ -17,7 +17,7 @@ LinkedList::LinkedList() {
     s_count++;
 }
 
-LinkedList::LinkedList(rank_t r, suit_t s) {
+LinkedList::LinkedList(suit_t s, rank_t r) {
     storage_t n = new Card(r, s);
     head = n;
     tail = n;
@@ -44,31 +44,59 @@ LinkedList::~LinkedList() {
     s_count--;
 }
 
-void LinkedList::pushFront(rank_t r, suit_t s) {
+void LinkedList::pushFront(suit_t s, rank_t r) {
     storage_t newHead = new Card(r, s);
     Card::join(newHead, this->head);
     this->head = newHead;
     size++;
 }
 
-void LinkedList::pushBack(rank_t r, suit_t s) {
+void LinkedList::pushBack(suit_t s, rank_t r) {
     storage_t newTail = new Card(r, s);
     Card::join(this->tail, newTail);
     this->tail = newTail;
     size++;
 }
 
-//prob a bug here if it removes the head
-void LinkedList::removeCardsByValue(rank_t r, suit_t s) {
+Card * LinkedList::popFront() {
+    Card * front = new Card(this->head->getSuit(),this->head->getRank());
+    safeHeadTailRemove(this->head);
+    this->head->remove();
+    size--;
+    return front;
+}
+
+Card * LinkedList::popBack() {
+    Card * back = new Card(this->tail->getSuit(),this->tail->getRank());
+    safeHeadTailRemove(this->tail);
+    this->tail->remove();
+    size--;
+    return back;
+}
+
+Card * LinkedList::findCardByValue(suit_t s, rank_t r) {
     storage_t check = this->head;
     while (check != NULL) {
         storage_t temp = check->getNext();
         if(check->checkSuitRank(s,r)) {
-            check->remove();
-            size--;
+            return check;
         }
         check = temp;
     }
+    return NULL;
+}
+
+//returns number of Cards removed
+int LinkedList::removeCardsByValue(suit_t s, rank_t r) {
+    Card * toRemove;
+    int numCardsRemoved = 0;
+    while ((toRemove = findCardByValue(s, r)) != NULL) {
+        safeHeadTailRemove(toRemove);
+        toRemove->remove();
+        size--;
+        numCardsRemoved++;
+    }
+    return numCardsRemoved;
 }
 
 void LinkedList::print() {
@@ -89,6 +117,18 @@ void LinkedList::concatenate(LinkedList * a) {
     Card::join(this->tail, a->head);
     this->tail = a->tail;
 }
+
+
+void LinkedList::safeHeadTailRemove(Card * a) {
+    if (this->head == a) {
+        this->head = a->getNext();
+    }
+    if (this->tail == a) {
+        this->tail = a->getPrev();
+    }
+}
+
+
 /* static */
 void LinkedList::countInstantiations() {
     cout << "There is/are " << s_count << " Linked List Instantiation(s)" << endl;

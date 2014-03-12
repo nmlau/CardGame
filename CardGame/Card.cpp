@@ -32,6 +32,14 @@ Card::Card(Card * p, Card * n, suit_t s, rank_t r) {
     rank = r;
 }
 
+/*deep copy */
+Card::Card(Card * c) {
+    if (c->prev != NULL) { prev = c->prev; }
+    if (c->next != NULL) { next = c->next; }
+    suit = c->suit;
+    rank = c->rank;
+}
+
 suit_t Card::getSuit() {return suit;}
 rank_t Card::getRank() {return rank;}
 void Card::setPrev(Card * a) {prev = a;}
@@ -64,4 +72,5 @@ void Card::join(Card * a, Card * b) {
 
 void Card::remove() {
     join(this->prev, this->next);
+    delete(this);
 }

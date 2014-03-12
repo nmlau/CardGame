@@ -18,6 +18,7 @@ public:
     Card();
     Card(suit_t s, rank_t r);
     Card(Card * p, Card * n, suit_t s, rank_t r);
+    Card(Card * c); //deep copy
     
     /*getters and setters */
     void setSuit(suit_t a);

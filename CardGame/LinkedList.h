@@ -19,7 +19,6 @@ private:
     static int s_count;
 
 public:
-    
     storage_t head;
     storage_t tail;
     int size;
@@ -33,9 +32,13 @@ public:
     /***** Methods ******/
     void pushFront(suit_t s, rank_t r);
     void pushBack(suit_t s, rank_t r);
-    void removeCardsByValue(suit_t s, rank_t r);
+    Card * popFront();
+    Card * popBack();
+    Card * findCardByValue(suit_t, rank_t r);
+    int removeCardsByValue(suit_t s, rank_t r);
     void print();
     void concatenate(LinkedList * a);
+    void safeHeadTailRemove(Card * a);
     static void countInstantiations();
     //void removeDuplicates();
     //LinkedList * subtract(LinkedList * a);
