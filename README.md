@@ -13,6 +13,9 @@ Todo:
 Uncouple Node and LinkedList
 Finish Deck package
 
+Change to pass-by-reference (explained by article from cplusplus, is the general consensus)
+-http://www.cplusplus.com/articles/z6vU7k9E/
+
 Longterm Additions:
 Unit Testing
 GUI

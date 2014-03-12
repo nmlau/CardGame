@@ -10,29 +10,37 @@
 #define __CardGame__Card__
 
 #include <iostream>
-#include "Node.h"
-typedef char* suit_t;
-typedef char* rank_t;
+typedef int suit_t;
+typedef int rank_t;
 
 class Card {
 public:
     Card();
     Card(suit_t s, rank_t r);
-    Card(DATA d);
-    Card(Node * n);
+    Card(Card * p, Card * n, suit_t s, rank_t r);
     
+    /*getters and setters */
     void setSuit(suit_t a);
     suit_t getSuit();
+    
     void setRank(rank_t a);
     rank_t getRank();
-    void setNode(Node * a);
-    Node * getNode();
+        
+    void setPrev(Card * a);
+    Card * getPrev();
+    
+    void setNext(Card * a);
+    Card * getNext();
+    
+    bool checkSuitRank(suit_t s, rank_t r);
+    static void join(Card * a, Card * b);
+    void remove();
 
 private:
     suit_t suit;
     rank_t rank;
-    Node * node;
-    
+    Card * prev;
+    Card * next;
 };
 
 #endif /* defined(__CardGame__Card__) */

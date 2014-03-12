@@ -26,19 +26,21 @@ public:
     
     /**** Constructors ******/
     LinkedList();
-    LinkedList(DATA d);
+    LinkedList(suit_t s, rank_t r);
     LinkedList(LinkedList * a);
     ~LinkedList();
     
     /***** Methods ******/
-    void addNode(DATA d);
-    void removeNode(DATA d);
+    void pushFront(suit_t s, rank_t r);
+    void pushBack(suit_t s, rank_t r);
+    void removeCardsByValue(suit_t s, rank_t r);
     void print();
-    static void countInstantiations();
-    static LinkedList * join(LinkedList * a, LinkedList * b);
     void concatenate(LinkedList * a);
-    void removeDuplicates();
-    LinkedList * subtract(LinkedList * a);
+    static void countInstantiations();
+    //void removeDuplicates();
+    //LinkedList * subtract(LinkedList * a);
+    //static LinkedList * join(LinkedList * a, LinkedList * b);
+
 };
 
 

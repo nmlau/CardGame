@@ -30,6 +30,7 @@ public:
     
     /* inserts node between nodes */
     static void join(Node * a, Node * b);
+    void remove();
 
 private:
     Node * prev;

@@ -38,11 +38,18 @@ Node * Node::getNextNode() {return next;}
 /* inserts node between nodes
    is declared static in .h     */
 void Node::join(Node * a, Node * b) {
-    if (b != NULL) {
+    if (b != NULL && a != NULL) {
         a->next = b;
         b->prev = a;
     }
-    else {
+    else if (a != NULL) {
         a->next = NULL;
     }
+    else if (b != NULL) {
+        b->prev = NULL;
+    }
+}
+
+void Node::remove() {
+    join(this->getPrevNode(), this->getNextNode());
 }
