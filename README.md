@@ -10,7 +10,6 @@ Design such as abstraction, encapsulation, polymorphism, inheritence, coupling, 
 -Central points of control (ie all db connections in one class)
 
 Todo:
-Uncouple Node and LinkedList
 Finish Deck package
 
 Change to pass-by-reference (explained by article from cplusplus, is the general consensus)

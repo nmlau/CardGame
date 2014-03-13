@@ -1,4 +1,4 @@
-//
+    //
 //  LinkedList.cpp
 //  LinkedList
 //
@@ -46,22 +46,41 @@ LinkedList::~LinkedList() {
 
 void LinkedList::pushFront(suit_t s, rank_t r) {
     storage_t newHead = new Card(r, s);
+    safeHeadTailAdd(newHead);
     Card::join(newHead, this->head);
     this->head = newHead;
     size++;
 }
 
 void LinkedList::pushBack(suit_t s, rank_t r) {
-    storage_t newTail = new Card(r, s);
-    Card::join(this->tail, newTail);
+    storage_t newTail = new Card(s, r);
+    if (isEmpty()) {
+            safeHeadTailAdd(newTail);
+    }
+    else {
+        Card::join(this->tail, newTail);
+    }
     this->tail = newTail;
     size++;
+}
+
+void LinkedList::pushAfter(Card * target, Card * push) {
+    if (target == this->tail) {
+        Card::join(target, push);
+        this->tail = push;
+    }
+    else {
+        Card::join(push, target->getNext());
+        Card::join(target, push);
+        
+    }
+    
 }
 
 Card * LinkedList::popFront() {
     Card * front = new Card(this->head->getSuit(),this->head->getRank());
     safeHeadTailRemove(this->head);
-    this->head->remove();
+    this->head->removeAndDelete();
     size--;
     return front;
 }
@@ -69,12 +88,12 @@ Card * LinkedList::popFront() {
 Card * LinkedList::popBack() {
     Card * back = new Card(this->tail->getSuit(),this->tail->getRank());
     safeHeadTailRemove(this->tail);
-    this->tail->remove();
+    this->tail->removeAndDelete();
     size--;
     return back;
 }
 
-Card * LinkedList::findCardByValue(suit_t s, rank_t r) {
+Card * LinkedList::findByValue(suit_t s, rank_t r) {
     storage_t check = this->head;
     while (check != NULL) {
         storage_t temp = check->getNext();
@@ -87,29 +106,65 @@ Card * LinkedList::findCardByValue(suit_t s, rank_t r) {
 }
 
 //returns number of Cards removed
-int LinkedList::removeCardsByValue(suit_t s, rank_t r) {
+int LinkedList::removeByValue(suit_t s, rank_t r) {
     Card * toRemove;
     int numCardsRemoved = 0;
-    while ((toRemove = findCardByValue(s, r)) != NULL) {
+    while ((toRemove = findByValue(s, r)) != NULL) {
         safeHeadTailRemove(toRemove);
-        toRemove->remove();
+        toRemove->removeAndDelete();
         size--;
         numCardsRemoved++;
     }
     return numCardsRemoved;
 }
 
+Card * LinkedList::moveCardByValDir(storage_t move, int n, int d) {
+    Card * moveToAfter = getShiftedByAmountDirectionCard(move, n, d);
+    if (move == moveToAfter) {
+        return moveToAfter;
+    }
+    Card * temp = new Card(move->getSuit(), move->getRank());
+    safeHeadTailRemove(move);
+    move->removeAndDelete();
+    pushAfter(moveToAfter, temp);
+    return moveToAfter;
+}
+
+Card * LinkedList::getShiftedByAmountDirectionCard(Card * start, int num, int dir) {
+    Card * shifted = start;
+    if (dir == 1) {
+        while (num > 0 && shifted->getNext()) {
+            shifted = shifted->getNext();
+            num--;
+        }
+    }
+    else if (dir == 0) {
+        while (num > 0 && shifted->getPrev()) {
+            shifted = shifted->getPrev();
+            num--;
+        }
+    }
+    return shifted;
+}
+
+bool LinkedList::isEmpty() {
+    if (head == NULL && tail == NULL && size ==0) {
+        return true;
+    }
+    return false;
+}
+
 void LinkedList::print() {
     cout << "print out linked list" << endl;
-    storage_t print = this->head;
-    cout << print->getRank() << print->getSuit() << endl;
+    Card * print = this->head;
+    cout << "rank: " << print->getRank() << ", suit: " << print->getSuit() << endl;
     while (print->getNext() != NULL) {
-        print = print->getNext();
-        cout << print->getRank() << print->getSuit() << endl;
+        print = print->getNext
+        ();
+        cout << "rank: " << print->getRank() << ", suit: " << print->getSuit() << endl;
     }
     cout << "end print" << endl;
 }
- 
 /*
  Concatenates a deep copy of paramter 'a' onto calling object
  */
@@ -118,6 +173,14 @@ void LinkedList::concatenate(LinkedList * a) {
     this->tail = a->tail;
 }
 
+void LinkedList::safeHeadTailAdd(Card * a) {
+    if (this->head == NULL) {
+        this->head = a;
+    }
+    if (this->tail == NULL) {
+        this->tail = a;
+    }
+}
 
 void LinkedList::safeHeadTailRemove(Card * a) {
     if (this->head == a) {

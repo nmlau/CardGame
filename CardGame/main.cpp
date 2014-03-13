@@ -7,8 +7,7 @@
 //
 
 #include <iostream>
-#include "LinkedList.h"
-#include "Card.h"
+#include "Deck.h"
 using namespace std;
 
 int main(int argc, const char * argv[])
@@ -25,6 +24,10 @@ int main(int argc, const char * argv[])
     test2->pushBack(21,21);
     test2->pushBack(21,21);
     test2->print();
+    Deck * deck = new Deck();
+    deck = Deck::buildDeck();
+    deck->shuffle();
+    deck->print();
     
     /* Basic Linked List using Nodes test
     LinkedList * test = new LinkedList(9);

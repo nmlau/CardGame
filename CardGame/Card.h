@@ -10,6 +10,7 @@
 #define __CardGame__Card__
 
 #include <iostream>
+#include <assert.h>
 typedef int suit_t;
 typedef int rank_t;
 
@@ -35,7 +36,7 @@ public:
     
     bool checkSuitRank(suit_t s, rank_t r);
     static void join(Card * a, Card * b);
-    void remove();
+    void removeAndDelete();
 
 private:
     suit_t suit;

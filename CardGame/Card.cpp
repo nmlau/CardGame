@@ -70,7 +70,7 @@ void Card::join(Card * a, Card * b) {
     }
 }
 
-void Card::remove() {
+void Card::removeAndDelete() {
     join(this->prev, this->next);
-    delete(this);
+    delete this;
 }

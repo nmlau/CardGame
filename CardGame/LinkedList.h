@@ -15,9 +15,6 @@ using namespace std;
 typedef Card * storage_t;
 
 class LinkedList {
-private:
-    static int s_count;
-
 public:
     storage_t head;
     storage_t tail;
@@ -32,17 +29,26 @@ public:
     /***** Methods ******/
     void pushFront(suit_t s, rank_t r);
     void pushBack(suit_t s, rank_t r);
-    Card * popFront();
-    Card * popBack();
-    Card * findCardByValue(suit_t, rank_t r);
-    int removeCardsByValue(suit_t s, rank_t r);
+    void pushAfter(Card * target, Card * push);
+    storage_t popFront();
+    storage_t popBack();
+    storage_t findByValue(suit_t, rank_t r);
+    int removeByValue(suit_t s, rank_t r);
+    storage_t moveCardByValDir(storage_t move, int n, int d);
+    bool isEmpty();
     void print();
     void concatenate(LinkedList * a);
-    void safeHeadTailRemove(Card * a);
-    static void countInstantiations();
+
+    
     //void removeDuplicates();
     //LinkedList * subtract(LinkedList * a);
     //static LinkedList * join(LinkedList * a, LinkedList * b);
+private:
+    static int s_count;
+    storage_t getShiftedByAmountDirectionCard(storage_t start, int n, int d);
+    void safeHeadTailAdd(storage_t a);
+    void safeHeadTailRemove(storage_t a);
+    static void countInstantiations();
 
 };
 

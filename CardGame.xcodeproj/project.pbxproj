@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA88390C18D12BF4005E5A3A /* Deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA88390A18D12BF4005E5A3A /* Deck.cpp */; };
 		BA9AB54018CD946000304ACF /* ICard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA9AB53F18CD946000304ACF /* ICard.cpp */; };
 		BAC6CD9D18CAAC7000F2CF5F /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */; };
 		BAD8201A18C9C70700A988E3 /* CardGame.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BAD8201918C9C70700A988E3 /* CardGame.1 */; };
@@ -30,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		BA7DFC7B18CFB55100BC7F42 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		BA88390A18D12BF4005E5A3A /* Deck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Deck.cpp; sourceTree = "<group>"; };
+		BA88390B18D12BF4005E5A3A /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
 		BA9AB53E18CD946000304ACF /* ICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICard.h; sourceTree = "<group>"; };
 		BA9AB53F18CD946000304ACF /* ICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ICard.cpp; sourceTree = "<group>"; };
 		BAC6CD9B18CAAC7000F2CF5F /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
@@ -68,7 +71,8 @@
 		BA9AB54218CE886800304ACF /* Deck */ = {
 			isa = PBXGroup;
 			children = (
-				BAD8203918CA869000A988E3 /* main.cpp */,
+				BA88390A18D12BF4005E5A3A /* Deck.cpp */,
+				BA88390B18D12BF4005E5A3A /* Deck.h */,
 				BAFAEFD818CFC7E100A7AB16 /* LinkedList.cpp */,
 				BAFAEFD718CFC7E100A7AB16 /* LinkedList.h */,
 				BAC6CD9C18CAAC7000F2CF5F /* Card.cpp */,
@@ -97,6 +101,7 @@
 		BAD8201618C9C70700A988E3 /* CardGame */ = {
 			isa = PBXGroup;
 			children = (
+				BAD8203918CA869000A988E3 /* main.cpp */,
 				BA9AB54218CE886800304ACF /* Deck */,
 				BA9AB54118CE883800304ACF /* Old */,
 				BAD8201918C9C70700A988E3 /* CardGame.1 */,
@@ -155,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA88390C18D12BF4005E5A3A /* Deck.cpp in Sources */,
 				BA9AB54018CD946000304ACF /* ICard.cpp in Sources */,
 				BAD8203F18CA869000A988E3 /* Node.cpp in Sources */,
 				BAFAEFD918CFC7E100A7AB16 /* LinkedList.cpp in Sources */,
