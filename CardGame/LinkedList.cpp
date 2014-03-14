@@ -46,7 +46,13 @@ LinkedList::~LinkedList() {
 
 void LinkedList::pushFront(suit_t s, rank_t r) {
     storage_t newHead = new Card(r, s);
-    safeHeadTailAdd(newHead);
+    if (isEmpty()) {
+        pushToEmpty(newHead);
+    }
+    else {
+        Card::join(this->head, newHead);
+    }
+    pushToEmpty(newHead);
     Card::join(newHead, this->head);
     this->head = newHead;
     size++;
@@ -55,13 +61,13 @@ void LinkedList::pushFront(suit_t s, rank_t r) {
 void LinkedList::pushBack(suit_t s, rank_t r) {
     storage_t newTail = new Card(s, r);
     if (isEmpty()) {
-            safeHeadTailAdd(newTail);
+            pushToEmpty(newTail);
     }
     else {
         Card::join(this->tail, newTail);
+        this->tail = newTail;
+        size++;
     }
-    this->tail = newTail;
-    size++;
 }
 
 void LinkedList::pushAfter(Card * target, Card * push) {
@@ -72,9 +78,14 @@ void LinkedList::pushAfter(Card * target, Card * push) {
     else {
         Card::join(push, target->getNext());
         Card::join(target, push);
-        
     }
-    
+    size++;
+}
+
+void LinkedList::pushToEmpty(Card * a) {
+    this->head = a;
+    this->tail = a;
+    size++;
 }
 
 Card * LinkedList::popFront() {
@@ -118,14 +129,17 @@ int LinkedList::removeByValue(suit_t s, rank_t r) {
     return numCardsRemoved;
 }
 
+//returns the card that passed in card was moved to
 Card * LinkedList::moveCardByValDir(storage_t move, int n, int d) {
     Card * moveToAfter = getShiftedByAmountDirectionCard(move, n, d);
+    //ensures that it doesn't attach a node to itself, thus avoiding disastrously incorrect loops
     if (move == moveToAfter) {
         return moveToAfter;
     }
     Card * temp = new Card(move->getSuit(), move->getRank());
     safeHeadTailRemove(move);
     move->removeAndDelete();
+    size--;
     pushAfter(moveToAfter, temp);
     return moveToAfter;
 }
@@ -171,15 +185,7 @@ void LinkedList::print() {
 void LinkedList::concatenate(LinkedList * a) {
     Card::join(this->tail, a->head);
     this->tail = a->tail;
-}
-
-void LinkedList::safeHeadTailAdd(Card * a) {
-    if (this->head == NULL) {
-        this->head = a;
-    }
-    if (this->tail == NULL) {
-        this->tail = a;
-    }
+    this->size = this->size + a->size;
 }
 
 void LinkedList::safeHeadTailRemove(Card * a) {
