@@ -22,7 +22,6 @@ public:
     
     /**** Constructors ******/
     LinkedList();
-    LinkedList(suit_t s, rank_t r);
     LinkedList(LinkedList * a);
     ~LinkedList();
     

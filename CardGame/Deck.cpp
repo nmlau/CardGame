@@ -25,6 +25,13 @@ void Deck::shuffle() {
         int dir = rand() % 2; //0 is left, 1 is right
         x = moveCardByValDir(x, shift, dir);
     }
-    assert(this->size == 52);
-    
+}
+
+bool Deck::validate() {
+    for (int i = 1; i<=4; i++) {
+        for (int j = 1; j<=13; j++) {
+            if (findByValue(i, j)==NULL) {return false;}
+        }
+    }
+    return true;
 }

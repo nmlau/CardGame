@@ -17,14 +17,6 @@ LinkedList::LinkedList() {
     s_count++;
 }
 
-LinkedList::LinkedList(suit_t s, rank_t r) {
-    storage_t n = new Card(r, s);
-    head = n;
-    tail = n;
-    size = 1;
-    s_count++;
-}
-
 LinkedList::LinkedList(LinkedList * a) {
     storage_t index = a->head;
     storage_t n = new Card(index->getRank(),index->getSuit());
@@ -143,6 +135,8 @@ Card * LinkedList::moveCardByValDir(storage_t move, int n, int d) {
     pushAfter(moveToAfter, temp);
     return moveToAfter;
 }
+
+/*****private functions ******* ******* ******* ******* ********/
 
 Card * LinkedList::getShiftedByAmountDirectionCard(Card * start, int num, int dir) {
     Card * shifted = start;

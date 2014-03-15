@@ -15,11 +15,11 @@
 class Deck: public LinkedList {
 public:
     Deck(): LinkedList() {}
-    Deck(suit_t s, rank_t r): LinkedList(s, r) {}
     Deck(Deck * a): LinkedList(a) {}
     
     static Deck * buildDeck();
     void shuffle();
+    bool validate();
     
 private:
 };
