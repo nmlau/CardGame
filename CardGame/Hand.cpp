@@ -8,6 +8,6 @@
 
 #include "Hand.h"
 
-void Hand::addToHand(Card * a) {
+void Hand::add(Card * a) {
     this->pushBack(a->getSuit(), a->getRank());
 }

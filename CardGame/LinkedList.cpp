@@ -82,16 +82,18 @@ void LinkedList::pushToEmpty(Card * a) {
 
 Card * LinkedList::popFront() {
     Card * front = new Card(this->head->getSuit(),this->head->getRank());
+    Card * temp = this->head;
     safeHeadTailRemove(this->head);
-    this->head->removeAndDelete();
+    temp->removeAndDelete();
     size--;
     return front;
 }
 
 Card * LinkedList::popBack() {
     Card * back = new Card(this->tail->getSuit(),this->tail->getRank());
+    Card * temp = this->tail;
     safeHeadTailRemove(this->tail);
-    this->tail->removeAndDelete();
+    temp->removeAndDelete();
     size--;
     return back;
 }
@@ -165,11 +167,11 @@ bool LinkedList::isEmpty() {
 void LinkedList::print() {
     cout << "print out linked list" << endl;
     Card * print = this->head;
-    cout << "rank: " << print->getRank() << ", suit: " << print->getSuit() << endl;
+    cout << "suit: " << print->getSuit() << ", rank: " << print->getRank() << endl;
     while (print->getNext() != NULL) {
         print = print->getNext
         ();
-        cout << "rank: " << print->getRank() << ", suit: " << print->getSuit() << endl;
+        cout << "suit: " << print->getSuit() << ", rank: " << print->getRank() << endl;
     }
     cout << "end print" << endl;
 }
