@@ -33,6 +33,7 @@ int main(int argc, const char * argv[])
     hand->add(deck->popFront());
     hand->add(deck->popFront());
     hand->print();
+    deck->peekFrontAnAmount(5);
      
 }
 

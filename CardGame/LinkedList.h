@@ -29,25 +29,26 @@ public:
     void pushFront(suit_t s, rank_t r);
     void pushBack(suit_t s, rank_t r);
     void pushAfter(Card * target, Card * push);
-    void pushToEmpty(storage_t a);
     storage_t popFront();
     storage_t popBack();
     storage_t findByValue(suit_t, rank_t r);
     int removeByValue(suit_t s, rank_t r);
     storage_t moveCardByValDir(storage_t move, int n, int d);
+    void peekFrontAnAmount(int a);
     void print();
     void concatenate(LinkedList * a);
 
     
+private:
+    storage_t getShiftedByAmountDirectionCard(storage_t start, int n, int d);
+    bool isEmpty();
+    void pushToEmpty(storage_t a);
+    void safeHeadTailRemove(storage_t a);
+    //static void countInstantiations();
+    //static int s_count;
     //void removeDuplicates();
     //LinkedList * subtract(LinkedList * a);
     //static LinkedList * join(LinkedList * a, LinkedList * b);
-private:
-    static int s_count;
-    bool isEmpty();
-    storage_t getShiftedByAmountDirectionCard(storage_t start, int n, int d);
-    void safeHeadTailRemove(storage_t a);
-    static void countInstantiations();
 
 };
 

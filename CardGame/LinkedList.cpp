@@ -8,13 +8,13 @@
 
 #include "LinkedList.h"
 
-int LinkedList::s_count = 0;
+
 
 LinkedList::LinkedList() {
     head = NULL;
     tail = NULL;
     size = 0;
-    s_count++;
+    //s_count++;
 }
 
 LinkedList::LinkedList(LinkedList * a) {
@@ -29,11 +29,11 @@ LinkedList::LinkedList(LinkedList * a) {
         tail = tail->getNext();
         size++;
     }
-    s_count++;
+    //s_count++;
 }
 
 LinkedList::~LinkedList() {
-    s_count--;
+    //s_count--;
 }
 
 void LinkedList::pushFront(suit_t s, rank_t r) {
@@ -158,16 +158,40 @@ bool LinkedList::isEmpty() {
     return false;
 }
 
+void LinkedList::peekFrontAnAmount(int a) {
+    cout << "peek at linkedlist, amount: " << a << endl;
+    Card * show = this->head;
+    for (; a > 0 && show != NULL; a--) {
+        cout << "suit: " << show->getSuit() << ", rank: " << show->getRank() << endl;
+        if (show->getNext() == NULL) {
+            break;
+        }
+        show = show->getNext();
+    }
+    cout << "end print" << endl;
+}
+
 void LinkedList::print() {
+    cout << "print out linked list" << endl;
+    Card * show = this->head;
+    while (show != NULL) {
+        cout << "suit: " << show->getSuit() << ", rank: " << show->getRank() << endl;
+        if (show->getNext() == NULL) {
+            break;
+        }
+        show = show->getNext();
+    }
+    cout << "end print" << endl;
+    /*
     cout << "print out linked list" << endl;
     Card * print = this->head;
     cout << "suit: " << print->getSuit() << ", rank: " << print->getRank() << endl;
     while (print->getNext() != NULL) {
-        print = print->getNext
-        ();
+        print = print->getNext();
         cout << "suit: " << print->getSuit() << ", rank: " << print->getRank() << endl;
     }
     cout << "end print" << endl;
+     */
 }
 /*
  Concatenates a deep copy of paramter 'a' onto calling object
@@ -189,11 +213,11 @@ void LinkedList::safeHeadTailRemove(Card * a) {
 }
 
 
-/* static */
+/* static
 void LinkedList::countInstantiations() {
     cout << "There is/are " << s_count << " Linked List Instantiation(s)" << endl;
 }
-
+*/
 
 /*
 void LinkedList::removeDuplicates() {

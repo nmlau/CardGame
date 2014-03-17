@@ -7,3 +7,19 @@
 //
 
 #include "Player.h"
+
+static int id_count = 1;
+
+Player::Player() {
+    money = 0;
+    hand = NULL;
+    name = NULL;
+    player_id = id_count++;
+}
+
+Player::Player(char * a) {
+    money = 0;
+    hand = NULL;
+    name = a;
+    player_id = id_count++;
+}
