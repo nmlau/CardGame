@@ -82,18 +82,14 @@ void LinkedList::pushToEmpty(Card * a) {
 
 Card * LinkedList::popFront() {
     Card * front = new Card(this->head->getSuit(),this->head->getRank());
-    Card * temp = this->head;
     safeHeadTailRemove(this->head);
-    temp->removeAndDelete();
     size--;
     return front;
 }
 
 Card * LinkedList::popBack() {
     Card * back = new Card(this->tail->getSuit(),this->tail->getRank());
-    Card * temp = this->tail;
     safeHeadTailRemove(this->tail);
-    temp->removeAndDelete();
     size--;
     return back;
 }
@@ -116,7 +112,6 @@ int LinkedList::removeByValue(suit_t s, rank_t r) {
     int numCardsRemoved = 0;
     while ((toRemove = findByValue(s, r)) != NULL) {
         safeHeadTailRemove(toRemove);
-        toRemove->removeAndDelete();
         size--;
         numCardsRemoved++;
     }
@@ -124,7 +119,7 @@ int LinkedList::removeByValue(suit_t s, rank_t r) {
 }
 
 //returns the card that passed in card was moved to
-Card * LinkedList::moveCardByValDir(storage_t move, int n, int d) {
+Card * LinkedList::moveCardByValDir(Card * move, int n, int d) {
     Card * moveToAfter = getShiftedByAmountDirectionCard(move, n, d);
     //ensures that it doesn't attach a node to itself, thus avoiding disastrously incorrect loops
     if (move == moveToAfter) {
@@ -132,7 +127,6 @@ Card * LinkedList::moveCardByValDir(storage_t move, int n, int d) {
     }
     Card * temp = new Card(move->getSuit(), move->getRank());
     safeHeadTailRemove(move);
-    move->removeAndDelete();
     size--;
     pushAfter(moveToAfter, temp);
     return moveToAfter;
@@ -191,6 +185,7 @@ void LinkedList::safeHeadTailRemove(Card * a) {
     if (this->tail == a) {
         this->tail = a->getPrev();
     }
+    a->removeAndDelete();
 }
 
 

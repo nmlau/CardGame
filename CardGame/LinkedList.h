@@ -46,7 +46,6 @@ private:
     static int s_count;
     bool isEmpty();
     storage_t getShiftedByAmountDirectionCard(storage_t start, int n, int d);
-
     void safeHeadTailRemove(storage_t a);
     static void countInstantiations();
 

@@ -12,8 +12,7 @@ Design such as abstraction, encapsulation, polymorphism, inheritence, coupling, 
 
 
 Todo:
-Finish Deck package
-SafeHeadTailRemove and RemoveAndDelete in LL have to be combined
+
 
 Change to pass-by-reference (explained by article from cplusplus, is the general consensus)
 -http://www.cplusplus.com/articles/z6vU7k9E/
