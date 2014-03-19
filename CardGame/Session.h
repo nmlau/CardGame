@@ -11,7 +11,24 @@
 
 #include <iostream>
 #include "Deck.h"
+#include "Hand.h"
 #include "Player.h"
+#include "Session.h"
+
+/*
+    datamembers: 
+ -players involved
+ -active decks
+ -switch to change between commandline/gui
+    functions:
+ -startsession: create players, assigns them deck
+ -deal: give cards to players, gets size of hands from logic
+ -evaluatehands: gives value to hands through logic
+ -getNextStage: ask logic what to do next
+ -endsession:
+ 
+ */
+
 
 class Session {
 public:
