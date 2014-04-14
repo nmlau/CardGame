@@ -11,7 +11,8 @@
 #include "Hand.h"
 using namespace std;
 
-int main(int argc, const char * argv[])
+//int main(int argc, const char * argv[])
+int main()
 {
     /* Card tests
     Card * test = new Card(1,1);
