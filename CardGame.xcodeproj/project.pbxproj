@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA3617AB18FF407A0053A65C /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA3617A918FF407A0053A65C /* UI.cpp */; };
 		BA8FD91C18FC9CCB002FE278 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD90818FC9CCB002FE278 /* Card.cpp */; };
 		BA8FD91D18FC9CCB002FE278 /* Deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD90A18FC9CCB002FE278 /* Deck.cpp */; };
 		BA8FD91E18FC9CCB002FE278 /* Hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD90C18FC9CCB002FE278 /* Hand.cpp */; };
@@ -34,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA3617A918FF407A0053A65C /* UI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UI.cpp; sourceTree = "<group>"; };
+		BA3617AA18FF407A0053A65C /* UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 		BA7DFC7B18CFB55100BC7F42 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		BA8FD90818FC9CCB002FE278 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
 		BA8FD90918FC9CCB002FE278 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
@@ -52,7 +55,7 @@
 		BA8FD91818FC9CCB002FE278 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		BA8FD91918FC9CCB002FE278 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		BA8FD91A18FC9CCB002FE278 /* Session.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Session.cpp; sourceTree = "<group>"; };
-		BA8FD91B18FC9CCB002FE278 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		BA8FD91B18FC9CCB002FE278 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		BAD8201418C9C70700A988E3 /* CardGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD8201918C9C70700A988E3 /* CardGame.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CardGame.1; sourceTree = "<group>"; };
 		BAD8203918CA869000A988E3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -69,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA3617A818FF3FAF0053A65C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BA3617A918FF407A0053A65C /* UI.cpp */,
+				BA3617AA18FF407A0053A65C /* UI.h */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		BA8FD90718FC9CCB002FE278 /* Deck */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD8203918CA869000A988E3 /* main.cpp */,
+				BA3617A818FF3FAF0053A65C /* UI */,
 				BA8FD90718FC9CCB002FE278 /* Deck */,
 				BA8FD91418FC9CCB002FE278 /* Logic */,
 				BA8FD91718FC9CCB002FE278 /* Session */,
@@ -194,6 +207,7 @@
 				BA8FD91D18FC9CCB002FE278 /* Deck.cpp in Sources */,
 				BA8FD91F18FC9CCB002FE278 /* ICard.cpp in Sources */,
 				BAD8203E18CA869000A988E3 /* main.cpp in Sources */,
+				BA3617AB18FF407A0053A65C /* UI.cpp in Sources */,
 				BA8FD92418FC9CCB002FE278 /* Session.cpp in Sources */,
 				BA8FD92018FC9CCB002FE278 /* LinkedList.cpp in Sources */,
 				BA8FD92218FC9CCB002FE278 /* FiveCardDrawLogic.cpp in Sources */,

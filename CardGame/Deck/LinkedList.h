@@ -37,7 +37,6 @@ public:
     void peekFrontAnAmount(int a);
     void print();
     void concatenate(LinkedList * a);
-
     
 private:
     storage_t getShiftedByAmountDirectionCard(storage_t start, int n, int d);

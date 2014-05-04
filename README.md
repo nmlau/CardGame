@@ -7,19 +7,16 @@ Goal: Apply and thus internalize concepts from Code Complete 2
 
 Concepts:
 Design such as abstraction, encapsulation, polymorphism, inheritence, coupling, cohesion...
--Central points of control (ie all db connections in one class)
+-Central points of control (ie all db connections in one class/package)
 
 Design:
-Card -> LinkedList -> Deck -> Session -> Need something here?!? -> GameLogic (5card draw)
-                -> Hand -> Session -> Player
-                        -> Player
+Card -> LinkedList -> Deck -> Session ->  GameLogic (5card draw)
+                    -> Hand -> Session -> Player
+                            Session -> UI
 
-*Session is central control point*
+*Session is central module*
 
 
 Todo:
-
-
-Longterm Additions:
 Unit Testing
-GUI
+GUI (non CLI)

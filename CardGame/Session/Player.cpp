@@ -23,3 +23,7 @@ Player::Player(char * a) {
     name = a;
     player_id = id_count++;
 }
+
+Player::~Player() {
+    player_id = id_count--;
+}

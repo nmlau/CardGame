@@ -14,9 +14,12 @@
 #include "Hand.h"
 #include "Player.h"
 #include "Session.h"
+#include "UI.h"
+#include <vector>
 
 /*
     datamembers: 
+ -what game
  -players involved
  -active decks
  -switch to change between commandline/gui
@@ -32,7 +35,11 @@
 
 class Session {
 public:
+    Session();
+    
 private:
+    vector<Player> players;
+    
 };
 
 

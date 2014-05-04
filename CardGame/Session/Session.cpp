@@ -7,3 +7,9 @@
 //
 
 #include "Session.h"
+
+
+Session::Session() {
+    int num = UI::getAmountOfPlayers();
+ //   players = (Player *) malloc()
+}

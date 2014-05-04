@@ -18,6 +18,7 @@ class Player {
 public:
     Player();
     Player(char * name);
+    ~Player();
     
     void setMoney(money_t a);
     money_t getMoney();
