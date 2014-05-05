@@ -7,7 +7,6 @@
 //
 
 #include "UI.h"
-#include <string>
 
 //UI is hardcoded for now
 
@@ -15,8 +14,15 @@ int UI::getAmountOfPlayers() {
     return 2;
 }
 
-std::string * UI::getNamesofPlayers(int num) {
+string * UI::getNamesofPlayers(int num) {
     //string * stringArray = new string[2] {"Nick", "Daniel"};
     string * stringArray = new string[num] {"Nick", "Daniel"};
     return stringArray;
+}
+
+string * UI::getPlayers(int & length) {
+    length = 4;
+    string * stringArray = new string[length] {"Nick", "Daniel", "J4", "Ahri"};
+    return stringArray;
+    
 }

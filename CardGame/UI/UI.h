@@ -18,6 +18,7 @@ class UI {
 public:
     static int getAmountOfPlayers();
     static string* getNamesofPlayers(int num);
+    static string* getPlayers(int & length);
 private:
     
 };

@@ -31,3 +31,11 @@ Player::~Player() {
 string Player::getName() {
     return name;
 }
+
+money_t Player::getMoney() {
+    return money;
+}
+
+hand_t Player::getHand() {
+    return hand;
+}

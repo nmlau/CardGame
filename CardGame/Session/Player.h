@@ -25,9 +25,8 @@ public:
     money_t getMoney();
     void setHand(hand_t a);
     hand_t getHand();
-    void setName(char * name);
+    void setName(string name);
     string getName();
-    
     
 private:
     money_t money;

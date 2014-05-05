@@ -11,14 +11,22 @@
 
 
 Session::Session() {
-    int num = UI::getAmountOfPlayers();
+    //int num = UI::getAmountOfPlayers();
     //string * nameArray = new string[num];
     //nameArray = UI::getNamesofPlayers(num);
-    string * nameArray = UI::getNamesofPlayers(num);
     
-    for (int i = 0; i < num; i++) {
+    int length;
+    int & lengthRef = length;
+    string * nameArray = UI::getPlayers(lengthRef);
+//    for (int i = 0; i < (nameArray->size())/2; i++) {
+    for (int i = 0; i < lengthRef; i++) {
         players.push_back(Player(nameArray[i]));
     }
     
+    
+    for (vector<Player>::iterator it = players.begin() ; it != players.end(); ++it) {
+        cout << ' ' << it->getName();
+    }
+    cout << '\n';
 
 }
