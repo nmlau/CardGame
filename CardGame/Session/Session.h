@@ -15,7 +15,8 @@
 #include "Player.h"
 #include "Session.h"
 #include "UI.h"
-#include <vector>
+#include "vector"
+#include <string>
 
 /*
     datamembers: 
@@ -23,10 +24,14 @@
  -players involved
  -active decks
  -switch to change between commandline/gui
+  
     functions:
  -startsession: create players, assigns them deck
  -deal: give cards to players, gets size of hands from logic
+ -betting:
+ -discard:
  -evaluatehands: gives value to hands through logic
+ -payout:
  -getNextStage: ask logic what to do next
  -endsession:
  

@@ -9,7 +9,11 @@
 #include "Session.h"
 
 
+
 Session::Session() {
     int num = UI::getAmountOfPlayers();
- //   players = (Player *) malloc()
+    //string * nameArray = new string[num];
+    //nameArray = UI::getNamesofPlayers(num);
+    string * nameArray = UI::getNamesofPlayers(num);
+    cout << nameArray[0] <<nameArray[1];
 }

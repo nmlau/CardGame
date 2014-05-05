@@ -33,7 +33,7 @@ public:
     storage_t popBack();
     storage_t findByValue(suit_t, rank_t r);
     int removeByValue(suit_t s, rank_t r);
-    storage_t moveCardByValDir(storage_t move, int n, int d);
+    storage_t moveCardByValueDirection(storage_t move, int n, int d);
     void peekFrontAnAmount(int a);
     void print();
     void concatenate(LinkedList * a);

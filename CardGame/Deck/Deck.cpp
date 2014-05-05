@@ -23,7 +23,7 @@ void Deck::shuffle() {
     for (int i = 0; i < 500; i++) {
         int shift = (rand() % 26);
         int dir = rand() % 2; //0 is left, 1 is right
-        x = moveCardByValDir(x, shift, dir);
+        x = moveCardByValueDirection(x, shift, dir);
     }
 }
 

@@ -11,7 +11,6 @@
 		BA8FD91C18FC9CCB002FE278 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD90818FC9CCB002FE278 /* Card.cpp */; };
 		BA8FD91D18FC9CCB002FE278 /* Deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD90A18FC9CCB002FE278 /* Deck.cpp */; };
 		BA8FD91E18FC9CCB002FE278 /* Hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD90C18FC9CCB002FE278 /* Hand.cpp */; };
-		BA8FD91F18FC9CCB002FE278 /* ICard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD90E18FC9CCB002FE278 /* ICard.cpp */; };
 		BA8FD92018FC9CCB002FE278 /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD91018FC9CCB002FE278 /* LinkedList.cpp */; };
 		BA8FD92118FC9CCB002FE278 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD91218FC9CCB002FE278 /* Node.cpp */; };
 		BA8FD92218FC9CCB002FE278 /* FiveCardDrawLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD91518FC9CCB002FE278 /* FiveCardDrawLogic.cpp */; };
@@ -44,8 +43,6 @@
 		BA8FD90B18FC9CCB002FE278 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
 		BA8FD90C18FC9CCB002FE278 /* Hand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hand.cpp; sourceTree = "<group>"; };
 		BA8FD90D18FC9CCB002FE278 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
-		BA8FD90E18FC9CCB002FE278 /* ICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ICard.cpp; sourceTree = "<group>"; };
-		BA8FD90F18FC9CCB002FE278 /* ICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICard.h; sourceTree = "<group>"; };
 		BA8FD91018FC9CCB002FE278 /* LinkedList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedList.cpp; sourceTree = "<group>"; };
 		BA8FD91118FC9CCB002FE278 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
 		BA8FD91218FC9CCB002FE278 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
@@ -90,8 +87,6 @@
 				BA8FD90B18FC9CCB002FE278 /* Deck.h */,
 				BA8FD90C18FC9CCB002FE278 /* Hand.cpp */,
 				BA8FD90D18FC9CCB002FE278 /* Hand.h */,
-				BA8FD90E18FC9CCB002FE278 /* ICard.cpp */,
-				BA8FD90F18FC9CCB002FE278 /* ICard.h */,
 				BA8FD91018FC9CCB002FE278 /* LinkedList.cpp */,
 				BA8FD91118FC9CCB002FE278 /* LinkedList.h */,
 				BA8FD91218FC9CCB002FE278 /* Node.cpp */,
@@ -205,7 +200,6 @@
 				BA8FD92118FC9CCB002FE278 /* Node.cpp in Sources */,
 				BA8FD92318FC9CCB002FE278 /* Player.cpp in Sources */,
 				BA8FD91D18FC9CCB002FE278 /* Deck.cpp in Sources */,
-				BA8FD91F18FC9CCB002FE278 /* ICard.cpp in Sources */,
 				BAD8203E18CA869000A988E3 /* main.cpp in Sources */,
 				BA3617AB18FF407A0053A65C /* UI.cpp in Sources */,
 				BA8FD92418FC9CCB002FE278 /* Session.cpp in Sources */,

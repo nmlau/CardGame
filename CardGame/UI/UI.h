@@ -10,10 +10,14 @@
 #define __CardGame__UI__
 
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 class UI {
 public:
     static int getAmountOfPlayers();
+    static string* getNamesofPlayers(int num);
 private:
     
 };

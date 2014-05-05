@@ -119,7 +119,7 @@ int LinkedList::removeByValue(suit_t s, rank_t r) {
 }
 
 //returns the card that passed in card was moved to
-Card * LinkedList::moveCardByValDir(Card * move, int n, int d) {
+Card * LinkedList::moveCardByValueDirection(Card * move, int n, int d) {
     Card * moveToAfter = getShiftedByAmountDirectionCard(move, n, d);
     //ensures that it doesn't attach a node to itself, thus avoiding disastrously incorrect loops
     if (move == moveToAfter) {
@@ -182,17 +182,8 @@ void LinkedList::print() {
         show = show->getNext();
     }
     cout << "end print" << endl;
-    /*
-    cout << "print out linked list" << endl;
-    Card * print = this->head;
-    cout << "suit: " << print->getSuit() << ", rank: " << print->getRank() << endl;
-    while (print->getNext() != NULL) {
-        print = print->getNext();
-        cout << "suit: " << print->getSuit() << ", rank: " << print->getRank() << endl;
-    }
-    cout << "end print" << endl;
-     */
 }
+
 /*
  Concatenates a deep copy of paramter 'a' onto calling object
  */

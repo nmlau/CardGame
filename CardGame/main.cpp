@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Deck.h"
 #include "Hand.h"
+#include "Session.h"
 using namespace std;
 
 //int main(int argc, const char * argv[])
@@ -35,6 +36,8 @@ int main()
     hand->add(deck->popFront());
     hand->print();
     deck->peekFrontAnAmount(5);
+    
+    Session * session = new Session();
      
 }
 
