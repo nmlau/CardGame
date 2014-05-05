@@ -13,11 +13,11 @@ static int id_count = 1;
 Player::Player() {
     money = 0;
     hand = NULL;
-    name = NULL;
+    name = "";
     player_id = id_count++;
 }
 
-Player::Player(char * a) {
+Player::Player(string a) {
     money = 0;
     hand = NULL;
     name = a;
@@ -26,4 +26,8 @@ Player::Player(char * a) {
 
 Player::~Player() {
     player_id = id_count--;
+}
+
+string Player::getName() {
+    return name;
 }

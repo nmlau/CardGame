@@ -15,5 +15,10 @@ Session::Session() {
     //string * nameArray = new string[num];
     //nameArray = UI::getNamesofPlayers(num);
     string * nameArray = UI::getNamesofPlayers(num);
-    cout << nameArray[0] <<nameArray[1];
+    
+    for (int i = 0; i < num; i++) {
+        players.push_back(Player(nameArray[i]));
+    }
+    
+
 }

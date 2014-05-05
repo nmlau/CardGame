@@ -10,6 +10,7 @@
 #define __CardGame__Player__
 
 #include <iostream>
+#include <string>
 #include "Hand.h"
 typedef double  money_t;
 typedef Hand * hand_t;
@@ -17,7 +18,7 @@ typedef Hand * hand_t;
 class Player {
 public:
     Player();
-    Player(char * name);
+    Player(string name);
     ~Player();
     
     void setMoney(money_t a);
@@ -25,13 +26,13 @@ public:
     void setHand(hand_t a);
     hand_t getHand();
     void setName(char * name);
-    char * getName();
+    string getName();
     
     
 private:
     money_t money;
     hand_t hand;
-    char * name;
+    string name;
     int player_id;
 };
 
