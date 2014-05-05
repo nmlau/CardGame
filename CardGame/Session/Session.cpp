@@ -18,7 +18,6 @@ Session::Session() {
     int length;
     int & lengthRef = length;
     string * nameArray = UI::getPlayers(lengthRef);
-//    for (int i = 0; i < (nameArray->size())/2; i++) {
     for (int i = 0; i < lengthRef; i++) {
         players.push_back(Player(nameArray[i]));
     }

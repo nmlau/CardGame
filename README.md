@@ -20,3 +20,4 @@ May want to give phases their own class?
 Todo:
 Unit Testing
 GUI (non CLI)
+Move to CLI/text editor workflow

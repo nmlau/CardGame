@@ -27,6 +27,17 @@ void Deck::shuffle() {
     }
 }
 
+//variation should be less than 52, right exception to catch
+void Deck::shuffle(int numOfTimes, int variation) {
+    Card * x = this->head;
+    for (int i = 0; i < numOfTimes; i++) {
+        int shift = (rand() % variation);
+        int dir = rand() % 2; //0 is left, 1 is right
+        x = moveCardByValueDirection(x, shift, dir);
+    }
+}
+
+//overload to validate different forms of decks (jokers, 2 decks, game specific variations, cheating :P )
 bool Deck::validate() {
     for (int i = 1; i<=4; i++) {
         for (int j = 1; j<=13; j++) {

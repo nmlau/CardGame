@@ -8,7 +8,7 @@
 
 #include "UI.h"
 
-//UI is hardcoded for now
+//UI is hardcoded for now for testing (need to get test unit suite)
 
 int UI::getAmountOfPlayers() {
     return 2;

@@ -19,6 +19,7 @@ public:
     
     static Deck * buildDeck();
     void shuffle();
+    void shuffle(int numOfTimes, int variation);
     bool validate();
     
 private:
