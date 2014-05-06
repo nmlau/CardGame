@@ -12,21 +12,21 @@ static int id_count = 1;
 
 Player::Player() {
     money = 0;
-    hand = NULL;
+    hand = new Hand();
     name = "";
     player_id = id_count++;
 }
 
 Player::Player(string a) {
     money = 0;
-    hand = NULL;
+    hand = new Hand();
     name = a;
     player_id = id_count++;
 }
 
 Player::Player(string setName, money_t setMoney) {
     money = setMoney;
-    hand = NULL;
+    hand = new Hand();
     name = setName;
     player_id = id_count++;
 }

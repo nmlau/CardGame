@@ -43,7 +43,7 @@ class Session {
 public:
     Session();
     int getStages();
-    bool dealCards();
+    bool dealCards(int numOfCards, int numOfPlayers);
     bool betMoney();
     bool discardCards();
     bool evaluateHands();

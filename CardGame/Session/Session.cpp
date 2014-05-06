@@ -23,23 +23,24 @@ Session::Session() {
         players.push_back(Player(nameArray[i],50));
     }
     
-//    for (vector<Player>::iterator it = players.begin() ; it != players.end(); ++it) {
+//    for (vector<Player>::iterator it = players.begin() ; it != players.end(); it++) {
 //        cout << it->getName() << ": ";
 //        cout << it->getMoney() << endl;
 //    }
-    dealCards();
+    dealCards(5,length); //hard coded to 5 card draw
 
 }
 
-bool Session::dealCards() {
+bool Session::dealCards(int numOfCards, int numOfPlayers) {
     
     //cycle through players (make a helper function here)
-    for (vector<Player>::iterator it = players.begin() ; it != players.end(); ++it) {
+    int index = 0;
+    for (vector<Player>::iterator it = players.begin(); index < numOfCards * numOfPlayers; it++, index++) {
+        if (it == players.end()) {
+            it = players.begin();
+        }
         it->getHand()->add(deck->popFront());
     }
-    cout << deck->size;
-    
-    //pop cards and add them to players hands
     
     return false;
 }
