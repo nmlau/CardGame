@@ -17,7 +17,7 @@ public:
     Hand(): LinkedList() {}
     Hand(Hand * a): LinkedList(a) {}
     
-    static Hand * buildHand();
+//    static Hand * buildHand();
     void add(Card *);
     bool validate();
     

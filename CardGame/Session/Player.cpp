@@ -24,12 +24,24 @@ Player::Player(string a) {
     player_id = id_count++;
 }
 
+Player::Player(string setName, money_t setMoney) {
+    money = setMoney;
+    hand = NULL;
+    name = setName;
+    player_id = id_count++;
+}
+
+
 Player::~Player() {
     player_id = id_count--;
 }
 
 string Player::getName() {
     return name;
+}
+
+void Player::setMoney(money_t setMoney) {
+    money = setMoney;
 }
 
 money_t Player::getMoney() {

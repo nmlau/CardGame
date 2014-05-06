@@ -19,6 +19,7 @@ class Player {
 public:
     Player();
     Player(string name);
+    Player(string name, money_t setMoney);
     ~Player();
     
     void setMoney(money_t a);

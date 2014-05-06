@@ -33,6 +33,7 @@
  -evaluatehands: gives value to hands through logic
  -payout:
  -getNextStage: ask logic what to do next
+ -getStages: ask logic what to do
  -endsession:
  
  */
@@ -41,9 +42,17 @@
 class Session {
 public:
     Session();
+    int getStages();
+    bool dealCards();
+    bool betMoney();
+    bool discardCards();
+    bool evaluateHands();
+    bool payoutMoney();
     
 private:
     vector<Player> players;
+    Deck * deck;
+    
     
 };
 
