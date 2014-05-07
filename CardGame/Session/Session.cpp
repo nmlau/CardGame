@@ -15,6 +15,7 @@ Session::Session() {
     //string * nameArray = new string[num];
     //nameArray = UI::getNamesofPlayers(num);
     deck = Deck::buildDeck();
+    deck->shuffle();
     
     int length;
     int & lengthRef = length;
@@ -28,10 +29,11 @@ Session::Session() {
 //        cout << it->getMoney() << endl;
 //    }
     dealCards(5,length); //hard coded to 5 card draw
+    evaluateHands();
 
 }
 
-bool Session::dealCards(int numOfCards, int numOfPlayers) {
+void Session::dealCards(int numOfCards, int numOfPlayers) {
     
     //cycle through players (make a helper function here)
     int index = 0;
@@ -41,6 +43,15 @@ bool Session::dealCards(int numOfCards, int numOfPlayers) {
         }
         it->getHand()->add(deck->popFront());
     }
-    
-    return false;
+
 }
+
+
+
+void Session::evaluateHands() {
+    
+    for (vector<Player>::iterator it = players.begin() ; it != players.end(); it++) {
+        //it->getHand()->print();
+    }
+}
+

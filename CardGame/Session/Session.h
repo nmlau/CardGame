@@ -43,11 +43,11 @@ class Session {
 public:
     Session();
     int getStages();
-    bool dealCards(int numOfCards, int numOfPlayers);
-    bool betMoney();
-    bool discardCards();
-    bool evaluateHands();
-    bool payoutMoney();
+    void dealCards(int numOfCards, int numOfPlayers);
+    void betMoney();
+    void discardCards();
+    void evaluateHands();
+    void payoutMoney();
     
 private:
     vector<Player> players;

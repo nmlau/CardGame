@@ -34,7 +34,10 @@ int main()
     hand->add(deck->popFront());
     hand->add(deck->popFront());
     hand->add(deck->popFront());
+    hand->add(deck->popFront());
+    hand->add(deck->popFront());
     hand->print();
+    hand->evaluateHand();
     deck->peekFrontAnAmount(5);
     
     Session * session = new Session();

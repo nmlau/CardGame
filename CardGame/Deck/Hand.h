@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "LinkedList.h"
+#include <map>
 
 class Hand: public LinkedList {
 public:
@@ -19,7 +20,8 @@ public:
     
 //    static Hand * buildHand();
     void add(Card *);
-    bool validate();
+    double evaluateHand();
+    void handToMap(map<rank_t, int> & map);
     
 private:
 };
