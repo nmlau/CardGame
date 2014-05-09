@@ -37,10 +37,11 @@ int main()
     hand->add(deck->popFront());
     hand->add(deck->popFront());
     hand->print();
-    hand->evaluateHand();
-    deck->peekFrontAnAmount(5);
+    double handValue = hand->evaluateHand();
+    cout << handValue << endl;
+//    deck->peekFrontAnAmount(5);
     
-    Session * session = new Session();
+//    Session * session = new Session();
      
 }
 

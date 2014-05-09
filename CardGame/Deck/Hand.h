@@ -21,7 +21,9 @@ public:
 //    static Hand * buildHand();
     void add(Card *);
     double evaluateHand();
-    void handToMap(map<rank_t, int> & map);
+    double evaluateHandHashMap(map<rank_t, int> & rankMap, map<suit_t, int> & suitMap);
+    void rankToMap(map<rank_t, int> & map);
+    void suitToMap(map<suit_t, int> & map);
     
 private:
 };

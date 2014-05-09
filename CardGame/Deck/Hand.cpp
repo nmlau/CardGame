@@ -13,6 +13,8 @@ void Hand::add(Card * a) {
 }
 
 /**
+ contant int numOfDifferentCardsTotal = 14
+ 
  9: Straight Flush = Straight + Flush
  8: Four of a Kind =
  7: Full House = 3 of a kind + 2 of a kind
@@ -23,23 +25,97 @@ void Hand::add(Card * a) {
  2: 1 pair
  1: High Card
  */
+const int numOfDifferentCardsTotal = 14;
 
 double Hand::evaluateHand() {
     //turn hand into a hashmap
-    map<rank_t,int> hashHand;
-    map<rank_t,int> & map = hashHand;
-    handToMap(map);
+    map<rank_t,int> rankHashed;
+    map<rank_t,int> & rankMap = rankHashed;
+    map<suit_t,int> suitHashed;
+    map<suit_t,int> & suitMap = suitHashed;
+
+    rankToMap(rankMap);
+    suitToMap(suitMap);
     
-    for (int i = 1; i < 14; i++) {
-        cout << i << ": " << map[i] <<endl;
-    }
-    
-    
-    return 1.00;
+    return evaluateHandHashMap(rankMap, suitMap);
 }
 
-void Hand::handToMap(map<rank_t, int> & map) {
-    for (rank_t index = 1; index < 14; index++) {
+double Hand::evaluateHandHashMap(map<rank_t, int> & rankMap, map<suit_t, int> & suitMap) {
+    
+    bool isStraight = false;
+    bool isFlush = false;
+    bool isFourOfAKind = false;
+    bool isThreeOfAKind = false;
+    bool isTwoPair = false;
+    bool isOnePair = false;
+    bool isHighCard = false;
+    
+//    double highCard = 0.00; //this isn't a complete implementation
+    
+    for (int i = 0; i<suitMap.size(); i++) {
+        if (suitMap[i] == 5) {
+            isFlush = true;
+        }
+    }
+    
+    for (int i = 0, straightCount = 0; i<rankMap.size(); i++) {
+        if (rankMap[i] > 0) {
+            straightCount++;
+        }
+        else {
+            straightCount = 0;
+        }
+        if (straightCount == 5) {
+            isStraight = true;
+        }
+        if (rankMap[i] == 4) {
+            isFourOfAKind = true;
+        }
+        if (rankMap[i] == 3) {
+            isThreeOfAKind = true;
+        }
+        if (rankMap[i] == 2) {
+            if(isOnePair) isTwoPair = true;
+            isOnePair = true;
+        }
+        if (rankMap[i] == 1) {
+            isHighCard = true;
+        }
+    }
+    if (isFlush && isStraight) {
+        return 9.00;
+    }
+    else if (isFourOfAKind) {
+        return 8.00;
+    }
+    else if (isThreeOfAKind && isTwoPair) {
+        return 7.00;
+    }
+    else if (isFlush) {
+        return 6.00;
+    }
+    else if (isStraight) {
+        return 5.00;
+    }
+    else if (isThreeOfAKind) {
+        return 4.00;
+    }
+    else if (isTwoPair) {
+        return 3.00;
+    }
+    else if (isOnePair) {
+        return 2.00;
+    }
+    else if (isHighCard) {
+        return 1.00;
+    }
+    else {
+        return 0.00;
+    }
+}
+
+void Hand::rankToMap(map<rank_t, int> & map) {
+    for (rank_t index = 1; index < numOfDifferentCardsTotal; index++) {
         map[index] = 0;
     }
     
@@ -51,6 +127,20 @@ void Hand::handToMap(map<rank_t, int> & map) {
         }
         currentCard = currentCard->getNext();
     }
-
-    
 }
+
+void Hand::suitToMap(map<suit_t, int> & map) {
+    for (rank_t index = 1; index < numOfDifferentCardsTotal; index++) {
+        map[index] = 0;
+    }
+    
+    Card * currentCard = this->head;
+    while (currentCard != NULL) {
+        map[currentCard->getRank()] += 1;
+        if (currentCard->getNext() == NULL) {
+            break;
+        }
+        currentCard = currentCard->getNext();
+    }
+}
+
