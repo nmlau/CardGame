@@ -34,8 +34,7 @@ double Hand::evaluateHand() {
     map<suit_t,int> suitHashed;
     map<suit_t,int> & suitMap = suitHashed;
 
-    rankToMap(rankMap);
-    suitToMap(suitMap);
+    handToMap(rankMap, suitMap);
     
     return evaluateHandHashMap(rankMap, suitMap);
 }
@@ -113,6 +112,14 @@ double Hand::evaluateHandHashMap(map<rank_t, int> & rankMap, map<suit_t, int> & 
         return 0.00;
     }
 }
+
+void Hand::handToMap(map<rank_t, int> & rankMap, map<suit_t, int> & suitMap) {
+    rankToMap(rankMap);
+    suitToMap(suitMap);
+    
+}
+
+/********** Private helper functions *********/
 
 void Hand::rankToMap(map<rank_t, int> & map) {
     for (rank_t index = 1; index < numOfDifferentCardsTotal; index++) {

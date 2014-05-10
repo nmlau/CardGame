@@ -22,10 +22,12 @@ public:
     void add(Card *);
     double evaluateHand();
     double evaluateHandHashMap(map<rank_t, int> & rankMap, map<suit_t, int> & suitMap);
-    void rankToMap(map<rank_t, int> & map);
-    void suitToMap(map<suit_t, int> & map);
+    void handToMap(map<rank_t, int> & rankMap, map<suit_t, int> & suitMap);
     
 private:
+    void rankToMap(map<rank_t, int> & map);
+    void suitToMap(map<suit_t, int> & map);
+
 };
 
 #endif /* defined(__CardGame__Hand__) */
