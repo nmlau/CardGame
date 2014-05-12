@@ -49,13 +49,7 @@ double Hand::evaluateHandHashMap(map<rank_t, int> & rankMap, map<suit_t, int> & 
     bool isOnePair = false;
     bool isHighCard = false;
     
-//    double highCard = 0.00; //this isn't a complete implementation
-    
-    for (int i = 0; i<suitMap.size(); i++) {
-        if (suitMap[i] == 5) {
-            isFlush = true;
-        }
-    }
+    double highCard = 0.00; //this isn't a complete implementation
     
     for (int i = 0, straightCount = 0; i<rankMap.size(); i++) {
         if (rankMap[i] > 0) {
@@ -66,50 +60,75 @@ double Hand::evaluateHandHashMap(map<rank_t, int> & rankMap, map<suit_t, int> & 
         }
         if (straightCount == 5) {
             isStraight = true;
+            if(i > highCard) {
+                highCard = ((double) i ) / 100;
+            }
         }
         if (rankMap[i] == 4) {
             isFourOfAKind = true;
+            if(i > highCard) {
+                highCard = ((double) i ) / 100;
+            }
         }
         if (rankMap[i] == 3) {
             isThreeOfAKind = true;
+            if(i > highCard) {
+                highCard = ((double) i ) / 100;
+            }
         }
         if (rankMap[i] == 2) {
             if(isOnePair) isTwoPair = true;
             isOnePair = true;
+            if(i > highCard) {
+                highCard = ((double) i ) / 100;
+            }
         }
         if (rankMap[i] == 1) {
             isHighCard = true;
+            if(i > highCard) {
+                highCard = ((double) i ) / 100;
+            }
         }
     }
+    for (int i = 0; i<suitMap.size(); i++) {
+        if (suitMap[i] == 5) {
+            isFlush = true;
+            if(i > highCard) {
+                highCard = ((double) i ) / 100;
+            }
+        }
+    }
+    
+    
     if (isFlush && isStraight) {
-        return 9.00;
+        return 9.00 + highCard;
     }
     else if (isFourOfAKind) {
-        return 8.00;
+        return 8.00 + highCard;
     }
     else if (isThreeOfAKind && isTwoPair) {
-        return 7.00;
+        return 7.00 + highCard;
     }
     else if (isFlush) {
-        return 6.00;
+        return 6.00 + highCard;
     }
     else if (isStraight) {
-        return 5.00;
+        return 5.00 + highCard;
     }
     else if (isThreeOfAKind) {
-        return 4.00;
+        return 4.00 + highCard;
     }
     else if (isTwoPair) {
-        return 3.00;
+        return 3.00 + highCard;
     }
     else if (isOnePair) {
-        return 2.00;
+        return 2.00 + highCard;
     }
     else if (isHighCard) {
-        return 1.00;
+        return 1.00 + highCard;
     }
     else {
-        return 0.00;
+        return 0.00 + highCard;
     }
 }
 
