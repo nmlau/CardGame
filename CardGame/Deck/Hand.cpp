@@ -39,6 +39,8 @@ double Hand::evaluateHand() {
     return evaluateHandHashMap(rankMap, suitMap);
 }
 
+/********** Private helper functions *********/
+
 double Hand::evaluateHandHashMap(map<rank_t, int> & rankMap, map<suit_t, int> & suitMap) {
     
     bool isStraight = false;
@@ -132,13 +134,11 @@ double Hand::evaluateHandHashMap(map<rank_t, int> & rankMap, map<suit_t, int> & 
     }
 }
 
+
 void Hand::handToMap(map<rank_t, int> & rankMap, map<suit_t, int> & suitMap) {
     rankToMap(rankMap);
     suitToMap(suitMap);
-    
 }
-
-/********** Private helper functions *********/
 
 void Hand::rankToMap(map<rank_t, int> & map) {
     for (rank_t index = 1; index < numOfDifferentCardsTotal; index++) {

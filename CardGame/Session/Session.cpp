@@ -50,8 +50,19 @@ void Session::dealCards(int numOfCards, int numOfPlayers) {
 
 void Session::evaluateHands() {
     
+    int bestHand = 0.00;
+    Player * playerWithBestHand = new Player();
     for (vector<Player>::iterator it = players.begin() ; it != players.end(); it++) {
-        //it->getHand()->print();
+//        it->getHand()->print();
+//        cout << it->getHand()->evaluateHand() << endl;
+        if (it->getHand()->evaluateHand() > bestHand) {
+            bestHand = it->getHand()->evaluateHand();
+            playerWithBestHand = &*it;
+        }
     }
+    cout << playerWithBestHand->getName() << endl;
+    playerWithBestHand->getHand()->print();
+    cout << playerWithBestHand->getHand()->evaluateHand() << endl;
+    
 }
 

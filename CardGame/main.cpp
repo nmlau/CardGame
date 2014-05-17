@@ -27,7 +27,7 @@ int main()
     Deck * deck = new Deck();
     deck = Deck::buildDeck();
     deck->shuffle();
-    deck->print();
+    //deck->print();
     
     /* Hand tests */
     Hand * hand = new Hand();
@@ -36,12 +36,12 @@ int main()
     hand->add(deck->popFront());
     hand->add(deck->popFront());
     hand->add(deck->popFront());
-    hand->print();
-    double handValue = hand->evaluateHand();
-    cout << handValue << endl;
+//    hand->print();
+//    double handValue = hand->evaluateHand();
+//    cout << handValue << endl;
 //    deck->peekFrontAnAmount(5);
     
-//    Session * session = new Session();
+    Session * session = new Session();
      
 }
 
