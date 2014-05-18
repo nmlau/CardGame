@@ -81,6 +81,10 @@ void LinkedList::pushToEmpty(Card * a) {
 }
 
 Card * LinkedList::popFront() {
+    if (this->head == NULL) {
+        cout << "trying to popFront from empty list" << endl;
+        exit(EXIT_SUCCESS);
+    }
     Card * front = new Card(this->head->getSuit(),this->head->getRank());
     safeHeadTailRemove(this->head);
     size--;
@@ -88,6 +92,10 @@ Card * LinkedList::popFront() {
 }
 
 Card * LinkedList::popBack() {
+    if (this->head == NULL) {
+        cout << "trying to popBack from empty list" << endl;
+        exit(EXIT_SUCCESS);
+    }
     Card * back = new Card(this->tail->getSuit(),this->tail->getRank());
     safeHeadTailRemove(this->tail);
     size--;

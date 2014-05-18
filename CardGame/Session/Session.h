@@ -44,9 +44,9 @@ public:
     Session();
     int getStages();
     void dealCards(int numOfCards, int numOfPlayers);
-    void betMoney();
+    void bettingRound();
     void discardCards();
-    void evaluateHands();
+    Player * evaluateHands();
     void payoutMoney();
     
 private:

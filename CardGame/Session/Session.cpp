@@ -19,6 +19,7 @@ Session::Session() {
     
     int length;
     int & lengthRef = length;
+    money_t moneyOnTable = 0;
     string * nameArray = UI::getPlayers(lengthRef);
     for (int i = 0; i < lengthRef; i++) {
         players.push_back(Player(nameArray[i],50));
@@ -28,8 +29,9 @@ Session::Session() {
 //        cout << it->getName() << ": ";
 //        cout << it->getMoney() << endl;
 //    }
-    dealCards(5,length); //hard coded to 5 card draw
-    evaluateHands();
+    dealCards(14,length); //hard coded to 5 card draw
+    bettingRound();
+    Player * winner = evaluateHands();
 
 }
 
@@ -43,13 +45,13 @@ void Session::dealCards(int numOfCards, int numOfPlayers) {
         }
         it->getHand()->add(deck->popFront());
     }
-
 }
 
-
-
-void Session::evaluateHands() {
+void Session::bettingRound() {
     
+}
+
+Player * Session::evaluateHands() {
     int bestHand = 0.00;
     Player * playerWithBestHand = new Player();
     for (vector<Player>::iterator it = players.begin() ; it != players.end(); it++) {
@@ -63,6 +65,8 @@ void Session::evaluateHands() {
     cout << playerWithBestHand->getName() << endl;
     playerWithBestHand->getHand()->print();
     cout << playerWithBestHand->getHand()->evaluateHand() << endl;
+    
+    return playerWithBestHand;
     
 }
 
